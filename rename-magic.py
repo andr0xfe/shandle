@@ -3,8 +3,8 @@
 filemagic.py
 """
 
-__author__ = "hklliang"
-__date__ = '$DATE $TIME'
+__author__ = "andr.0xfe"
+__date__ = '18:42 2017/12/20'
 
 import sys
 import os
@@ -21,6 +21,7 @@ def main():
     parser.add_argument('dir', action='store', help='需要解析的目录')
     if len(sys.argv) < 2:
         parser.print_help()
+        exit()
     #获取所有文件
     all_files = [ os.path.join(t[0], file) for t in os.walk(sys.argv[1]) for file in t[2]  ]
 
