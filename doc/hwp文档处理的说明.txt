@@ -1,0 +1,7 @@
+1. 实用7z解压hwp文档， 找到  .eps的二进制文件。
+
+2. 将eps 使用 unpack-eps.py 解压， 得到eps的脚本文件   .eps_script
+
+3. 将.eps_script 中的shellcode 提取出来放到一个新的文本中,
+
+4. 实用ascii2bin.py 将文本形式的shellcode还原为bin形式

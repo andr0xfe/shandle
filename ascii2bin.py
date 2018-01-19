@@ -1,29 +1,27 @@
 #-*-coding:utf-8-*-
 """
-filemagic.py
+ascii2bin.py
 """
 
 __author__ = "andr.0xfe"
-__date__ = '18:42 2017/12/20'
+__date__ = '2018/12/19'
 
 import sys
 import os
 
 import argparse
 
-import zlib
+import binascii
 
 
 
-
-# https://stackoverflow.com/questions/3122145/zlib-error-error-3-while-decompressing-incorrect-header-check
 
 def handle_file(file):
-    with open(file, 'rb') as f:
-        with open(file+"_script",'wb') as shellcode:
-            shellcode.write(zlib.decompress(f.read(),-zlib.MAX_WBITS))
+    with open(file, 'r') as f:
+        with open(file+"_bin",'wb') as shellcode:
+            shellcode.write(binascii.a2b_hex(f.read()))
 
-def unpack(path):
+def handle(path):
     """
     docstring here
         :param file: file or dir
@@ -44,7 +42,7 @@ def main():
         exit()
     
     # handle
-    unpack(sys.argv[1])
+    handle(sys.argv[1])
 
 
 
